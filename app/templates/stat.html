@@ -1,0 +1,141 @@
+<section class="content">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-7 col-md-6 col-sm-12">
+                    <h2>Статистика</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row clearfix">
+                <div class="col-lg-12">    
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Новые</strong> пользователи</h2>
+                        </div>
+                        <div class="body">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable" datatable="ng" dt-options="vm.dtOptions" dt-instance="vm.dtInstance"  width="100%" dt-column-defs="vm.dtColumnDefs">
+                                        <thead>
+                                            <tr>
+                                                <th>id</th>
+                                                <th>Имя</th>
+                                                <th>Дата регистрации</th>
+                                                <th>Возможный тип устройства</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr ng-repeat="person in newPersons">
+                                            <td>{{person.user_id}}</td>
+                                            <td>{{person.name}}</td>
+                                            <td>{{person.created_time}}</td>
+                                            <td>{{person.device}}</td>
+                                          </tr>
+                                        </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row clearfix">
+                    <div class="col-lg-12">    
+                        <div class="card">
+                            <div class="header">
+                                <h2><strong>Статистика</strong> по постам</h2>
+                            </div>
+                            <div class="body" style="overflow:auto;">
+                                    <table class="table table-bordered table-striped table-hover dataTable js-exportable" datatable="ng" dt-options="vm.dtOptions" dt-instance="vm.dtInstance"  width="100%" dt-column-defs="vm.dtColumnDefs">
+                                            <thead>
+                                                <tr>
+                                                    <th>Ссылка на пост</th>
+                                                    <th>Идентификатор ссылки</th>
+                                                    <th>Описание</th>
+                                                    <th>Маркет</th>
+                                                    <th>Количество</th>
+                                                    <th>Процент от общего числа</th>
+                                                    <th>Социальна сеть</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr ng-repeat="post in activityPosts">
+                                                <td>{{post.from}}</td>
+                                                <td>{{post.id}}</td>
+                                                <td>{{post.describe}}</td>
+                                                <td>{{post.client}}</td>
+                                                <td>{{post.count}}</td>
+                                                <td>{{post.percent}}</td>
+                                                <td>{{post.place}}</td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="row clearfix">
+                    <div class="col-lg-12">    
+                        <div class="card">
+                            <div class="header">
+                                <h2><strong>Статистика</strong> по входам в приложение</h2>
+                            </div>
+                            <div class="body">
+                                <table class="table table-bordered table-striped table-hover dataTable js-exportable" datatable="ng" dt-options="vm.dtOptions" dt-instance="vm.dtInstance"  width="100%" dt-column-defs="vm.dtColumnDefs">
+                                            <thead>
+                                                <tr>
+                                                    <th>id</th>
+                                                    <th>Количество входов</th>
+                                                    <th>Дата и время</th>
+                                                    <th>Устройство</th>
+                                                    <th>Процент от общего числа</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr ng-repeat="user in inputActivity.users">
+                                                <td>{{user.user_id}}</td>
+                                                <td>{{user.count}}</td>
+                                                <td>{{user.time}}</td>
+                                                <td>{{user.device}}</td>
+                                                <td>{{user.count*100/inputActivity.count}}</td>
+                                              </tr>
+                                            </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="card">
+                        <div class="header">
+                            <h2><strong>Активность</strong> пользователей
+                            <small>Всего пользователей : {{activity.count}}</small></h2>
+                        </div>
+                        <div class="body"> 
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item"><span class="nav-link active" data-toggle="tab" data-target="#day">День</span></li>
+                                <li class="nav-item"><span class="nav-link" data-toggle="tab" data-target="#week">Неделя</span></li>
+                                <li class="nav-item"><span class="nav-link" data-toggle="tab" data-target="#month">Месяц</span></li>
+                            </ul>                        
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="day"> <b>В течение дня</b>
+                                        <p>уникальных пользователей : {{activity.now.count}}<br>
+                                        процент от общего : {{activity.now.percent}}%</p>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="week"> <b>В течение недели</b>
+                                        <p>уникальных пользователей : {{activity.week.count}}<br>
+                                        процент от общего : {{activity.week.percent}}%</p>
+                                    </div>
+                                    <div role="tabpanel" class="tab-pane" id="month"> <b>В течение месяца</b>
+                                        <p>уникальных пользователей : {{activity.month.count}}<br/>
+                                        процент от общего : {{activity.month.percent}}%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>

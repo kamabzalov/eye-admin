@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html class="no-js" data-ng-app="app">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<title>EyeAdmin</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon-->
+<link rel="stylesheet" href="/assets/css/cropper.css">
+<link rel="stylesheet" href="/assets/plugins/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/dataTables.bootstrap4.min.css">
+<!-- Custom Css -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/color_skins.css">
+<link rel="stylesheet" href="/assets/css/custom.css">
+</head>
+<body class="theme-cyan">
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img class="zmdi-hc-spin" src="/assets/images/eye.png" width="48" height="48" alt="sQuare"></div>
+        <p>Пожалуйста, подождите...</p>        
+    </div>
+</div>
+<!-- Overlay For Sidebars -->
+<!-- Top Bar -->
+<nav class="navbar" data-ng-controller="profileController">
+    <ul class="nav navbar-nav navbar-left">
+        <li style="width:250px; line-height: 65px; text-align: center;">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="/app/"><img src="/assets/images/eye.png"></a>
+            </div>
+        </li> 
+        <li class="float-right">            
+            <a href="#" data-ng-click="logout()" class="mega-menu"><i class="zmdi zmdi-power"></i></a>
+        </li>
+    </ul>
+</nav>
+<!-- Left Sidebar -->
+<aside id="leftsidebar" class="sidebar" data-ng-controller="profileController">
+    <div class="menu">        
+        <ul class="list">
+            <li>
+                <div class="user-info m-b-20">
+                    <div class="image"><img data-ng-src="https://api.eyeinc.ru/assets/avatars/{{profileAvatar}}"></div>
+                    <div class="detail">
+                        <h4>{{profileLogin}}</h4>
+                        <div class="row">
+                            <div class="col-4 p-r-0">
+                                <h6 class="m-b-5">{{profileLikes}}</h6>
+                                <small>лайков</small>
+                            </div>
+                            <div class="col-4 p-l-0 p-r-0">
+                                <h6 class="m-b-5">{{profileWatchers}}</h6>
+                                <small>вотчеров</small>
+                            </div>
+                            <div class="col-4 p-l-0">
+                                <h6 class="m-b-5">{{profileFollowers}}</h6>
+                                <small>подписчиков</small>
+                            </div>                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="open"> <a href="/app/"><i class="zmdi zmdi-home"></i><span>Главная</span></a></li>
+            <li class="open"> <a href="/app/accounts/"><i class="zmdi zmdi-account-circle"></i><span>Аккаунты</span></a></li>
+            <li class="open"> <a href="/app/places/"><i class="material-icons">place</i><span>Заведения</span></a></li>
+            <li class="open"> <a href="/app/tickets/"><i class="zmdi zmdi-assignment"></i><span>Тикеты</span></a></li>
+            <!-- <li class="open"> <a href="/app/claims/"><i class="material-icons">error</i><span>Жалобы</span></a></li>
+            <li class="open"> <a href="/app/check-accounts/"><i class="zmdi zmdi-check-circle"></i><span>Проверка аккаунтов</span></a></li> -->
+            <li class="open"> <a href="/app/stat/"><i class="zmdi zmdi-chart"></i><span>Статистика</span></a></li>
+        </ul>
+    </div>
+</aside>
+
+<!-- Main Content -->
+<div data-ng-view>
+
+</div>
+
+<!--GMAPS-->
+<script src="https://maps.google.com/maps/api/js?key=AIzaSyDsC_j-ulu9Ley7Rq8yW7wFkTHQedu-caA&v=3&libraries=places"></script>
+
+<!-- Jquery Core Js --> 
+<script src="../assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js ( jquery.v3.2.1, Bootstrap4 js) --> 
+<script src="../assets/bundles/vendorscripts.bundle.js"></script> <!-- slimscroll, waves Scripts Plugin Js -->
+
+<script src="../assets/bundles/knob.bundle.js"></script> <!-- Jquery Knob-->
+
+<script src="../assets/bundles/mainscripts.bundle.js"></script>
+<script src="../assets/js/pages/index.js"></script>
+<script src="js/vendor/jquery.dataTables.min.js"></script>
+
+
+<script src="js/vendor/angular.js"></script>
+<script src="js/vendor/angular-route.js"></script>
+<script src="js/vendor/angular-datatables.min.js"></script>
+
+<script src="/app/js/vendor/cropper.js"></script>
+<script src="/app/js/vendor/jquery-cropper.js"></script>
+
+<script src="/assets/bundles/datatablescripts.bundle.js"></script>
+<script src="js/vendor/dataTables.buttons.min.js"></script>
+<script src="js/vendor/buttons.bootstrap4.min.js"></script>
+<script src="js/vendor/buttons.colVis.min.js"></script>
+<script src="js/vendor/buttons.flash.min.js"></script>
+<script src="js/vendor/buttons.print.min.js"></script>
+<script src="js/vendor/buttons.html5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="js/vendor/angular-datatables.buttons.min.js"></script>
+
+<script src="js/scripts/app.js"></script>
+
+</body>
+</html>

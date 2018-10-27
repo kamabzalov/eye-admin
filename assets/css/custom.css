@@ -1,0 +1,40 @@
+table td span.stat {
+    margin: 0 5px;
+}
+
+.tab-pane .card .body {
+    padding: 20px 20px 0 20px;
+}
+
+aside div.image {
+    margin: 10px 0;
+}
+
+aside div.image img {
+    object-fit: cover;
+    height: 80px;
+}
+
+.dataTables_length {
+    float: left;
+    margin: 10px 0px 0 10px;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+    float: right;
+    margin-top: 10px;
+}
+
+span.nav-link:hover {
+    cursor: pointer;
+}
+
+table img.avatar {
+    height: 40px;
+    object-fit: cover;
+}
+
+
+.form-control[disabled], .form-control:disabled {
+    background-color: transparent;
+}

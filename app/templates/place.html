@@ -1,0 +1,133 @@
+<section class="content contact">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Изменить данные о заведении</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="header">
+                        <h2><strong>Информация о заведении</strong></h2>
+                    </div>
+                    <div class="body">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <input type="text" data-ng-model="placeName" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <input type="email" data-ng-model="placeEmail" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <input type="text" data-ng-model="placeAddress" id="address" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <input type="text" data-ng-model="placeLatitude" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <input type="text" data-ng-model="placeLongitude" class="form-control">
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                     <div class="form-group">
+                                        <input type="file" data-ng-file-select class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <img src="https://api.eyeinc.ru/assets/avatars/{{placeAvatar}}" id="placeAvatar" class="avatar" alt=""> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="form-group">
+                                            <div id="gmap_markers" class="gmap"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <p><strong>Стена</strong></p>
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <img src="{{wallAvatar}}" class="avatar" id="wallAvatar" alt=""> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-sm-8">
+                                             <div class="form-group">
+                                                <input type="file" data-ng-wall-image class="form-control">
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="form-group">
+                                                <textarea data-ng-model="wallText" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                </div>
+                                
+                                <p><strong>Камеры</strong></p>
+                                
+                                <div class="row" data-ng-repeat="camera in placeCameras track by $index" style="margin-bottom:20px;">
+                                    <div class="col-sm-8">
+                                        <label for="cameraName">Название камеры</label>
+                                        <div class="form-group">                                
+                                            <input type="text" data-ng-model="camera.name" id="cameraName" class="form-control">
+                                        </div>
+                                        <label for="cameraUrl">Урл камеры</label>
+                                        <div class="form-group">                                
+                                            <input type="text" data-ng-model="camera.uri" id="cameraUrl" class="form-control">
+                                        </div>
+                                    </div>
+                                    <hr>
+                                </div>  
+
+                                
+                                <div class="checkbox">
+                                    <input id="remember_me" type="checkbox" data-ng-model="isVerify">
+                                    <label for="remember_me">Верифицировать аккаунт</label>
+                                </div>
+                                        
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <button data-ng-click="deletePlace()" class="btn btn-danger btn-round">Удалить</button>
+                                    </div>
+                                    <div class="col-sm-4 text-right">
+                                        <button ng-click="updatePlace()" class="btn btn-success btn-round">Изменить</button>
+                                    </div>
+                                </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

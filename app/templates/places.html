@@ -1,0 +1,45 @@
+<section class="content contact">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Список заведений</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="body table-responsive">
+                        <table class="table table-hover m-b-0 c_list" datatable="ng" dt-options="vm.dtOptions" dt-instance="vm.dtInstance" dt-column-defs="vm.dtColumnDefs">
+                            <thead>
+                                <tr>
+                                    <th>Имя/логин</th>                                    
+                                    <th data-breakpoints="xs sm md">Статистика</th>
+                                    <th data-breakpoints="xs">Редактировать/удалить</th>
+                                </tr>
+                            </thead>
+                                <tbody>
+                                <tr data-ng-repeat="place in places | filter: selectAccount">
+                                    <td>
+                                        <img data-ng-src="https://api.eyeinc.ru/assets/avatars/{{place.avatar}}" class="rounded-circle avatar" alt="">
+                                        <p class="c_name">{{place.name}}</p>
+                                    </td>                                  
+                                    <td>
+                                        <span class="stat"><i class="material-icons">favorite</i>{{place.likes}}</span>
+                                        <span class="stat"><i class="material-icons">group</i>{{place.followers}}</span>
+                                        <span class="stat"><i class="material-icons">star</i>{{place.watchers}}</span>
+                                    </td>
+                                    <td>
+                                        <a href="{{place.id}}" class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-edit"></i></a>
+                                        <a data-ng-click="deletePlace(place.id)" class="btn btn-icon btn-neutral btn-icon-mini"><i class="zmdi zmdi-delete"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

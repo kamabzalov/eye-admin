@@ -1,0 +1,58 @@
+<section class="content contact">
+    <div class="block-header">
+        <div class="row">
+            <div class="col-lg-7 col-md-6 col-sm-12">
+                <h2>Изменить аккаунт</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="header">
+						<h2><strong>Информация об аккаунте</strong></h2>
+                    </div>
+                    <div class="body">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <input type="text" data-ng-model="accountName" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <input type="text" data-ng-model="accountEmail" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-group">
+                                        <input type="file" data-ng-file-select class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <img src="https://api.eyeinc.ru/assets/avatars/{{accountAvatar}}" class="avatar" alt="">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <button data-ng-click="deleteAccount(id)" class="btn btn-danger btn-round">Удалить</button>
+                                </div>
+                                <div class="col-sm-4 text-right">
+                                    <button ng-click="updateAccount(id)" class="btn btn-success btn-round">Изменить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
